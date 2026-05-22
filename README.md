@@ -169,6 +169,38 @@ Receiving objects: 100% (3/3), done.
 * GitHub PR: *paste URL and a one-sentence summary*
 * GitLab MR: *paste URL and a one-sentence summary*
 
+git clone git@github.com:Lu21k09as/PP5.git
+cd PP5
+Cloning into 'PP5'...
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 13 (delta 2), reused 0 (delta 0), pack-reused 8 (from 1)
+Receiving objects: 100% (13/13), 6.65 KiB | 6.65 MiB/s, done.
+Resolving deltas: 100% (2/2), done.
+Lu21k09as@vorlesung:~/PP5$ git checkout -b pp5-changes
+Switched to a new branch 'pp5-changes'
+Lu21k09as@vorlesung:~/PP5$ echo "Updated by Lu21k09as" >> README.md
+Lu21k09as@vorlesung:~/PP5$ git add README.md
+git commit -m "Update README for PP5"
+[pp5-changes 569c3ab] Update README for PP5
+ 1 file changed, 1 insertion(+)
+Lu21k09as@vorlesung:~/PP5$ git push origin pp5-changes
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 3 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 341 bytes | 341.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'pp5-changes' on GitHub by visiting:
+remote:      https://github.com/Lu21k09as/PP5/pull/new/pp5-changes
+remote:
+To github.com:Lu21k09as/PP5.git
+ * [new branch]      pp5-changes -> pp5-changes
+Lu21k09as@vorlesung:~/PP5$
+
 ---
 
 **Remember:** Stop working after **90 minutes** and record where you stopped!
