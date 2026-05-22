@@ -166,7 +166,7 @@ Receiving objects: 100% (3/3), done.
 
 **Your PR/MR Links & Descriptions**
 
-* GitHub PR: *paste URL and a one-sentence summary*
+* GitHub PR: *[paste URL and a one-sentence summary](https://github.com/MaxClerkwell/PP5/pull/2)*
 * GitLab MR: *paste URL and a one-sentence summary*
 
 git clone git@github.com:Lu21k09as/PP5.git
