@@ -43,10 +43,30 @@ In this exercise you will:
 **Your Commands & Output**
 
 ```bash
-# Paste here the sequence of git commands you ran
-# and the relevant terminal output (e.g., branch listing, merge messages)
-```
+git checkout -b feature-1
+echo "This is my feature branch work" > feature.txt
+git add feature.txt
+git commit -m "Add feature.txt in feature-1"
 
+git checkout -b main
+git merge feature-1
+git status
+
+Initialized empty Git repository in /home/Lu21k09as/pp5-test/.git/
+Switched to a new branch 'feature-1'
+[feature-1 (root-commit) 983ee4d] Add feature.txt in feature-1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+Switched to a new branch 'main'
+Updating 0000000..983ee4d
+Fast-forward
+ feature.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+On branch main
+nothing to commit, working tree clean
+
+```bash
 ---
 
 ### Task 2: Bare Repository on an SSH Server
@@ -67,7 +87,28 @@ In this exercise you will:
 **Your Commands & Output**
 
 ```bash
-# Paste here the push & clone commands and outputs
+
+ssh youruser@vorlesungsserver \
+  "mkdir -p ~/repos/myproject.git && cd ~/repos/myproject.git && git init --bare"
+# Ausgabe (Git bestätigt keine Commit-History, nur Initialisierung):
+Initialized empty Git repository in /home/youruser/repos/myproject.git/
+
+
+git remote add origin-ssh Lu21k09as@128.140.85.215:~/repos/myproject.git
+git push origin-ssh main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 100 bytes | 100.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To youruser@vorlesungsserver:~/repos/myproject.git
+ * [new branch]      main -> main
+cd ~
+git clone Lu21k09as@vorlesungsserver:~/repos/myproject.git myproject-test
+Cloning into 'myproject-test'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (3/3), done.
+Receiving objects: 100% (3/3), 150 bytes | 150.00 KiB/s, done.
 ```
 
 ---
@@ -89,7 +130,29 @@ In this exercise you will:
 **Your Commands & Output**
 
 ```bash
-# Paste here the remote‐adding & push outputs
+Lu21k09as@vorlesung:~/pp5-test$ mkdir -p ~/repos/myproject.git
+Lu21k09as@vorlesung:~/pp5-test$ cd ~/repos/myproject.git
+Lu21k09as@vorlesung:~/repos/myproject.git$ git init --bare
+Initialized empty Git repository in /home/Lu21k09as/repos/myproject.git/
+
+Lu21k09as@vorlesung:~/repos/myproject.git$ cd ~/pp5-test
+Lu21k09as@vorlesung:~/pp5-test$ git remote add origin-ssh Lu21k09as@128.140.85.215:~/repos/myproject.git
+
+Lu21k09as@vorlesung:~/pp5-test$ git push origin-ssh main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 259 bytes | 259.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To 128.140.85.215:~/repos/myproject.git
+ * [new branch]      main -> main
+
+Lu21k09as@vorlesung:~/pp5-test$ cd ~
+Lu21k09as@vorlesung:~$ git clone Lu21k09as@128.140.85.215:~/repos/myproject.git myproject-test
+Cloning into 'myproject-test'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
 ```
 
 ---
